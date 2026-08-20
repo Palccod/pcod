@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-125 -125 250 250" width="250" height="250">
+  <defs>
+    <style>
+      @keyframes gaze-drift {
+        0%, 100% { transform: translate(0, 0); }
+        25% { transform: translate(2px, 1px); }
+        50% { transform: translate(-1px, 2px); }
+        75% { transform: translate(1px, -1px); }
+      }
+      @keyframes blink {
+        0%, 95%, 100% { transform: scaleY(1); }
+        97.5% { transform: scaleY(0.08); }
+      }
+      @keyframes breathe {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.015); }
+      }
+      @keyframes morph-cycle {
+        0% { d: path("M0,-100 C30,-100 55,-75 55,-45 C55,0 30,25 0,25 C-30,25 -55,0 -55,-45 C-55,-75 -30,-100 0,-100 Z"); }
+        12.5% { d: path("M0,-102 C32,-102 58,-78 58,-48 C58,0 32,28 0,28 C-32,28 -58,0 -58,-48 C-58,-78 -32,-102 0,-102 Z"); }
+        25% { d: path("M0,-105 C35,-105 62,-82 62,-52 C62,0 35,32 0,32 C-35,32 -62,0 -62,-52 C-62,-82 -35,-105 0,-105 Z"); }
+        37.5% { d: path("M0,-102 C32,-102 58,-78 58,-48 C58,0 32,28 0,28 C-32,28 -58,0 -58,-48 C-58,-78 -32,-102 0,-102 Z"); }
+        50% { d: path("M0,-100 C30,-100 55,-75 55,-45 C55,0 30,25 0,25 C-30,25 -55,0 -55,-45 C-55,-75 -30,-100 0,-100 Z"); }
+        62.5% { d: path("M-8,-100 C22,-100 48,-75 48,-45 C48,0 22,25 -8,25 C-38,25 -62,0 -62,-45 C-62,-75 -38,-100 -8,-100 Z"); }
+        75% { d: path("M8,-100 C38,-100 62,-75 62,-45 C62,0 38,25 8,25 C-22,25 -48,0 -48,-45 C-48,-75 -22,-100 8,-100 Z"); }
+        87.5% { d: path("M-8,-100 C22,-100 48,-75 48,-45 C48,0 22,25 -8,25 C-38,25 -62,0 -62,-45 C-62,-75 -38,-100 -8,-100 Z"); }
+        100% { d: path("M0,-100 C30,-100 55,-75 55,-45 C55,0 30,25 0,25 C-30,25 -55,0 -55,-45 C-55,-75 -30,-100 0,-100 Z"); }
+      }
+      .eye {
+        transform-origin: center center;
+        transform-box: fill-box;
+      }
+      .eye-left {
+        animation: gaze-drift 8s ease-in-out infinite alternate, blink 4s ease-in-out infinite;
+      }
+      .eye-right {
+        animation: gaze-drift 8s ease-in-out infinite alternate-reverse, blink 4s ease-in-out infinite 0.1s;
+      }
+      .body-shape {
+        transform-origin: center center;
+        transform-box: fill-box;
+        animation: breathe 6s ease-in-out infinite;
+      }
+      .morphing-body {
+        animation: morph-cycle 16s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+  
+  <!-- Body background (paper color for eye holes) - uses currentColor so it can be tinted -->
+  <path class="body-shape" fill="currentColor" d="M0,-100 C30,-100 55,-75 55,-45 C55,0 30,25 0,25 C-30,25 -55,0 -55,-45 C-55,-75 -30,-100 0,-100 Z"/>
+  
+  <!-- Main body with morphing animation - uses currentColor -->
+  <path class="morphing-body body-shape" fill="currentColor" d="M0,-100 C30,-100 55,-75 55,-45 C55,0 30,25 0,25 C-30,25 -55,0 -55,-45 C-55,-75 -30,-100 0,-100 Z">
+    <animate attributeName="d" dur="16s" repeatCount="indefinite" 
+      values="M0,-100 C30,-100 55,-75 55,-45 C55,0 30,25 0,25 C-30,25 -55,0 -55,-45 C-55,-75 -30,-100 0,-100 Z;
+              M0,-102 C32,-102 58,-78 58,-48 C58,0 32,28 0,28 C-32,28 -58,0 -58,-48 C-58,-78 -32,-102 0,-102 Z;
+              M0,-105 C35,-105 62,-82 62,-52 C62,0 35,32 0,32 C-35,32 -62,0 -62,-52 C-62,-82 -35,-105 0,-105 Z;
+              M0,-102 C32,-102 58,-78 58,-48 C58,0 32,28 0,28 C-32,28 -58,0 -58,-48 C-58,-78 -32,-102 0,-102 Z;
+              M0,-100 C30,-100 55,-75 55,-45 C55,0 30,25 0,25 C-30,25 -55,0 -55,-45 C-55,-75 -30,-100 0,-100 Z;
+              M-8,-100 C22,-100 48,-75 48,-45 C48,0 22,25 -8,25 C-38,25 -62,0 -62,-45 C-62,-75 -38,-100 -8,-100 Z;
+              M8,-100 C38,-100 62,-75 62,-45 C62,0 38,25 8,25 C-22,25 -48,0 -48,-45 C-48,-75 -22,-100 8,-100 Z;
+              M-8,-100 C22,-100 48,-75 48,-45 C48,0 22,25 -8,25 C-38,25 -62,0 -62,-45 C-62,-75 -38,-100 -8,-100 Z;
+              M0,-100 C30,-100 55,-75 55,-45 C55,0 30,25 0,25 C-30,25 -55,0 -55,-45 C-55,-75 -30,-100 0,-100 Z"
+      keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1"
+      calcMode="spline"
+      keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1"/>
+  </path>
+  
+  <!-- Eye mask for clipping -->
+  <mask id="eye-mask">
+    <rect x="-125" y="-125" width="250" height="250" fill="white"/>
+    <!-- Eye holes -->
+    <ellipse cx="-28" cy="-15" rx="14" ry="18" fill="black"/>
+    <ellipse cx="28" cy="-15" rx="14" ry="18" fill="black"/>
+  </mask>
+  
+  <!-- Eyes (white with black pupils) - fixed colors -->
+  <g mask="url(#eye-mask)">
+    <!-- Left eye white -->
+    <ellipse class="eye eye-left" cx="-28" cy="-15" rx="14" ry="18" fill="#f1efe9"/>
+    <!-- Left pupil -->
+    <ellipse class="eye eye-left" cx="-28" cy="-15" rx="6" ry="10" fill="#0a0a0c"/>
+    
+    <!-- Right eye white -->
+    <ellipse class="eye eye-right" cx="28" cy="-15" rx="14" ry="18" fill="#f1efe9"/>
+    <!-- Right pupil -->
+    <ellipse class="eye eye-right" cx="28" cy="-15" rx="6" ry="10" fill="#0a0a0c"/>
+  </g>
+</svg>

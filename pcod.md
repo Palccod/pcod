@@ -1,3 +1,0 @@
-build a omarchy-quattro plugin based on this knowledge https://omarchyplugins.com/develop.html then use this plugin as a reference for the UI/UX, components and functionality https://github.com/HANCORE-linux/omarchy-bongocat.git this plugin accepts user input but mine doesn't since it'll only display an animated gif or svg (see whats better) and the asset is here https://bloub.vercel.app/
-
-so once should be able to change the shape, color (should also be a theme sync color for omarchy just like the bongo cat plugin), size, positions and drag also (all these from bongo cat). so download the asset from the vercel project and build the plugin

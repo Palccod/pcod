@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "id": "palccod.bloub-avatar",
+  "name": "Bloub Avatar",
+  "version": "1.0.0",
+  "author": "Palccod",
+  "license": "MIT",
+  "description": "Animated SVG avatar (bloub) with morphing shapes, color themes, and draggable positioning for Omarchy Quattro.",
+  "keywords": ["bloub", "avatar", "animation", "overlay", "quickshell", "quattro", "svg", "morphing"],
+  "kinds": ["bar-widget", "service"],
+  "keepLoaded": true,
+  "entryPoints": {
+    "barWidget": "BarWidget.qml",
+    "service": "Service.qml"
+  },
+  "barWidget": {
+    "displayName": "Bloub Avatar",
+    "description": "Animated morphing avatar overlay with customizable shape, color, size, and position",
+    "category": "Fun",
+    "defaultSection": "right",
+    "allowMultiple": false,
+    "defaults": {
+      "active": true,
+      "positionLocked": true,
+      "positionX": -1,
+      "positionY": -1,
+      "avatarWidth": 200,
+      "shape": "nuage",
+      "colorMode": "theme",
+      "customColor": "#3b93f0",
+      "expression": "idle",
+      "animationSpeed": 1.0,
+      "workspaceId": 0
+    },
+    "schema": [
+      {
+        "key": "active",
+        "type": "boolean",
+        "label": "Avatar active",
+        "defaultValue": true
+      },
+      {
+        "key": "positionLocked",
+        "type": "boolean",
+        "label": "Lock position",
+        "defaultValue": true
+      },
+      {
+        "key": "positionX",
+        "type": "integer",
+        "label": "X position (-1 for automatic)",
+        "min": -1,
+        "max": 16000,
+        "defaultValue": -1
+      },
+      {
+        "key": "positionY",
+        "type": "integer",
+        "label": "Y position (-1 for automatic)",
+        "min": -1,
+        "max": 16000,
+        "defaultValue": -1
+      },
+      {
+        "key": "avatarWidth",
+        "type": "integer",
+        "label": "Avatar width (pixels)",
+        "min": 60,
+        "max": 640,
+        "step": 10,
+        "defaultValue": 200
+      },
+      {
+        "key": "shape",
+        "type": "string",
+        "label": "Shape",
+        "defaultValue": "nuage",
+        "options": [
+          { "value": "cercle", "label": "Circle" },
+          { "value": "galet", "label": "Pebble" },
+          { "value": "squircle", "label": "Squircle" },
+          { "value": "capsule", "label": "Capsule" },
+          { "value": "triangle", "label": "Triangle" },
+          { "value": "hexagone", "label": "Hexagon" },
+          { "value": "nuage", "label": "Cloud" },
+          { "value": "goutte", "label": "Droplet" }
+        ]
+      },
+      {
+        "key": "colorMode",
+        "type": "string",
+        "label": "Color mode",
+        "defaultValue": "theme",
+        "options": [
+          { "value": "default", "label": "Default (Ink)" },
+          { "value": "theme", "label": "Theme Accent" },
+          { "value": "custom", "label": "Custom Color" }
+        ]
+      },
+      {
+        "key": "customColor",
+        "type": "string",
+        "label": "Custom color (#RRGGBB)",
+        "defaultValue": "#3b93f0"
+      },
+      {
+        "key": "expression",
+        "type": "string",
+        "label": "Rest expression",
+        "defaultValue": "idle",
+        "options": [
+          { "value": "idle", "label": "Idle" },
+          { "value": "thinking", "label": "Thinking" },
+          { "value": "sleep", "label": "Sleep" },
+          { "value": "wink", "label": "Wink" },
+          { "value": "wide", "label": "Wide Eyes" },
+          { "value": "alert", "label": "Alert" },
+          { "value": "happy", "label": "Happy" }
+        ]
+      },
+      {
+        "key": "animationSpeed",
+        "type": "number",
+        "label": "Animation speed",
+        "min": 0.25,
+        "max": 3.0,
+        "step": 0.25,
+        "defaultValue": 1.0
+      },
+      {
+        "key": "workspaceId",
+        "type": "integer",
+        "label": "Workspace (0 for all)",
+        "min": 0,
+        "max": 10,
+        "defaultValue": 0
+      }
+    ]
+  }
+}
